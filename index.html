@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>To Do List created by michelle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Gochi+Hand&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>To Do List created by shel-ui</title>
 </head>
 <body>
-        <div id="white-bg">
-            <div id="Enter-part">
-                <input id="mainInput" type="text" placeholder="Enter a task..." maxlength="1000"> 
-                <button id="addBtn">+</button>
-            </div>
-            <div id="tasks"></div>
+    <div id="display">
+        <div id="selectAll-div">
+            <button id="selectAll-btn">Select all</button><input type="checkbox" id="checkBOX-main"></input>
         </div>
-    <script src="code.js"></script>
+        <div id="tasks">
+            <!--js generated tasks here-->
+        </div>
+    </div>
+    <div id="Enter-part">
+        <textarea id="mainInput" type="text" placeholder="Enter a task..."></textarea>
+        <button id="addBtn"> > </button>
+    </div>
+
+    <script src="createTask.js"></script>
+    <!--para gumana din offline -->
+    <script src="lib/sweetalert2.all.min.js" defer></script>
 </body>
 </html>
