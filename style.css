@@ -58,10 +58,15 @@ body {
 }
 
 
-
+.trashBtnDesign-main-isHidden {
+    display: none;
+}
+.trashBtnDesign-main-isVisible {
+    display: flex;
+}
 
 .wrapperDesign {
-    outline: 5px dashed yellow;
+    /*outline: 5px dashed yellow;*/
     display: flex;
     align-items: center;
     gap: 1em;
@@ -96,6 +101,8 @@ body {
     margin: 0;
     width: 32px; height: 32px;
 }
+
+
 
 .checkBOX-item {
     background-color: blue;

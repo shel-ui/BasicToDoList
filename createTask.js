@@ -1,10 +1,12 @@
-const button = document.getElementById('addBtn').addEventListener("click", displayTask); // if nagclick tayo ng button, iddisplay niya ung function natin
+const button = document.getElementById('addBtn').addEventListener("click", displayTask);
 const inputField = document.getElementById('mainInput').addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
-    displayTask(); // call the function to create the task
+    displayTask();
    event.preventDefault(); 
-}}); // pag nag enter ka ng key sa keyboard ay iddisplay din niya ung function natin
-let container = []; // eto ung nagsisilbing server natin as of the moment. kasi.. wala tayong server ahhahahaha, although may flaw 'to, pag narefresh ung page, mawawala lahat nung created tasks
+  }
+});
+
+let container = [];
 let selectAll = document.getElementById("selectAll-btn").addEventListener("click", summonSelection);
 let checkboxAtTop = document.getElementById("checkBOX-main");
 checkboxAtTop.classList.toggle('checkBOX-isHidden');
@@ -19,6 +21,9 @@ checkboxAtTop.addEventListener("change", function () {
   }
 });
 
+let trashButtonAtTop = document.getElementById("trashBtnDesign-main");
+trashButtonAtTop.classList.toggle('trashBtnDesign-main-isHidden');
+trashButtonAtTop.addEventListener("click", deleteAllTask);
 
 function displayTask() {
   const inputField = document.getElementById('mainInput');
@@ -93,13 +98,16 @@ function displayTask() {
 }
 
 function deleteAllTask() {
-  // devs called this destructuring, they say
-  const { wrapper, newTask, trashImage, trashButton } = displayTask();
   
-  // wrapper.remove();
-  // newTask.remove();
-  // trashButton.remove();
-  // trashImage.remove();
+  const allCheckboxes = document.querySelectorAll('.checkBOX-item');
+  
+    for (const loopThrough of allCheckboxes) {
+      if (loopThrough.checked) {
+        const wrapper = loopThrough.parentElement;
+        wrapper.remove();
+      }
+    }
+  
 }
 
 function checkAll() {
@@ -127,6 +135,7 @@ function summonSelection() {
   checkboxAtTop.checked = false;
   
   checkboxAtTop.classList.toggle('checkBOX-isVisible');
+  trashButtonAtTop.classList.toggle('trashBtnDesign-main-isVisible');
   
   const allCheckboxes = document.querySelectorAll('.checkBOX-item');
   
