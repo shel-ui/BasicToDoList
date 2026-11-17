@@ -3,6 +3,7 @@
     font-weight: 400;
     font-style: normal;
 }
+
 body {
     background-color: #E1DCC9;
     margin: 0;
@@ -77,7 +78,6 @@ body {
     display: flex;
 }
 
-
 /*js generated tasks*/
 .wrapperDesign {
     /*outline: 5px dashed yellow;*/
@@ -115,8 +115,6 @@ body {
     margin: 0;
     width: 32px; height: 32px;
 }
-
-
 
 /*bottom part where u enter*/
 #Enter-part {
